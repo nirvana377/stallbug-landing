@@ -339,7 +339,7 @@ export default function Home() {
               </p>
 
               <p className="text-base text-red-200 mb-8">
-                Aplicaciones web y móviles para facturación, inventarios, puntos de venta y más — <strong className="text-white">hechas aquí en Valledupar.</strong>
+                Aplicaciones web y móviles para facturación, inventarios, puntos de venta y más — <strong className="text-white">trabajamos de forma remota.</strong>
               </p>
 
               <CTAButton
@@ -347,55 +347,43 @@ export default function Home() {
                 size="large"
                 microcopy="Respuesta en minutos · Sin compromiso"
               />
-
-              {/* Social proof mini stats */}
-              <div className="flex flex-wrap gap-6 mt-10 pt-8 border-t border-white/20">
-                {[
-                  { value: "50+", label: "Proyectos entregados" },
-                  { value: "98%", label: "Clientes satisfechos" },
-                  { value: "3 años", label: "En el mercado" },
-                ].map((stat) => (
-                  <div key={stat.label}>
-                    <div className="text-2xl font-black text-white" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-red-300">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
             </div>
 
-            {/* Right: Dashboard mockup */}
-            <div className="hidden lg:block relative">
+            {/* Right: Dashboard image */}
+            <div className="hidden lg:flex justify-end">
               <div className="relative">
-                <div className="absolute inset-0 bg-blue-400/20 blur-3xl rounded-3xl" />
+                <div className="absolute -inset-4 bg-gradient-to-br from-red-400/20 to-orange-400/20 rounded-3xl blur-2xl" />
                 <img
-                  src="/manus-storage/stallbug-dashboard_5b836e9c.jpg"
-                  alt="Software StallBug en acción"
-                  className="relative z-10 rounded-2xl shadow-2xl border border-white/20 w-full"
+                  src="/manus-storage/stallbug-dashboard_a1b2c3d4.jpg"
+                  alt="StallBug Dashboard"
+                  className="relative rounded-2xl shadow-2xl max-w-md w-full"
                 />
-                {/* Floating badge */}
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 z-20">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
-                      <TrendingUp size={20} className="text-red-600" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-gray-500">Eficiencia promedio</div>
-                      <div className="font-black text-gray-900" style={{ fontFamily: "'Montserrat', sans-serif" }}>+60%</div>
-                    </div>
+                <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 max-w-xs">
+                  <div className="flex items-center gap-2 mb-2">
+                    <TrendingUp size={20} className="text-red-600" />
+                    <span className="text-sm font-bold text-gray-900">Eficiencia promedio</span>
                   </div>
+                  <div className="text-3xl font-black text-red-600">+60%</div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Wave bottom */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-16 md:h-20">
-            <path d="M0 80L1440 80L1440 20C1200 70 960 0 720 30C480 60 240 10 0 40L0 80Z" fill="white" />
-          </svg>
+          {/* Stats row */}
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-6 mt-20 max-w-2xl">
+            {[
+              { value: 50, suffix: "+", label: "Proyectos entregados" },
+              { value: 98, suffix: "%", label: "Clientes satisfechos" },
+              { value: 3, suffix: " años", label: "De experiencia" },
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <div className="text-3xl md:text-4xl font-black text-white mb-2">
+                  <AnimatedCounter target={stat.value} suffix={stat.suffix} />
+                </div>
+                <div className="text-sm text-red-100">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -491,60 +479,60 @@ export default function Home() {
             </h2>
           </div>
 
-          {/* Stats row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14 max-w-4xl mx-auto">
+          {/* Stats row - OPTIMIZED FOR MOBILE */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-14 max-w-4xl mx-auto">
             {[
               { value: 50, suffix: "%", label: "Más tiempo disponible" },
               { value: 0, suffix: " errores", label: "Críticos en tu sistema" },
               { value: 30, suffix: "%", label: "Más crecimiento" },
               { value: 80, suffix: "%", label: "Menos papeleo" },
             ].map((stat, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100">
-                <div className="stat-number">
+              <div key={i} className="bg-white rounded-2xl p-3 md:p-6 text-center shadow-sm border border-gray-100">
+                <div className="stat-number text-2xl md:text-3xl">
                   +<AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="text-sm text-gray-500 mt-2 font-medium">{stat.label}</div>
+                <div className="text-xs md:text-sm text-gray-500 mt-2 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
 
-          {/* Benefit cards */}
-          <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+          {/* Benefit cards - OPTIMIZED FOR MOBILE */}
+          <div className="grid md:grid-cols-2 gap-4 md:gap-5 max-w-4xl mx-auto">
             {[
               {
-                icon: <Clock size={24} className="text-blue-600" />,
+                icon: <Clock size={20} className="text-red-600" />,
                 title: "Automatiza tareas repetitivas",
                 desc: "Facturación automática, reportes programados, alertas de inventario. Tu equipo se enfoca en lo que realmente importa.",
               },
               {
-                icon: <CheckCircle size={24} className="text-blue-600" />,
+                icon: <CheckCircle size={20} className="text-red-600" />,
                 title: "Cero errores críticos",
                 desc: "Validaciones automáticas, auditoría de cambios y respaldos diarios. Tu información siempre segura y confiable.",
               },
               {
-                icon: <TrendingUp size={24} className="text-blue-600" />,
+                icon: <TrendingUp size={20} className="text-red-600" />,
                 title: "Decisiones con datos en tiempo real",
                 desc: "Dashboards actualizados al instante. Sabe exactamente cómo va tu negocio en cualquier momento.",
               },
               {
-                icon: <Smartphone size={24} className="text-blue-600" />,
+                icon: <Smartphone size={20} className="text-red-600" />,
                 title: "Accede desde cualquier dispositivo",
                 desc: "Web, móvil o tablet. Tu negocio en la palma de tu mano, desde cualquier lugar del Cesar.",
               },
             ].map((item, i) => (
-              <div key={i} className="benefit-card p-6">
+              <div key={i} className="benefit-card p-4 md:p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-red-50 flex items-center justify-center flex-shrink-0">
                     {item.icon}
                   </div>
                   <div>
                     <h3
-                      className="font-bold text-gray-900 text-lg mb-2"
+                      className="font-bold text-gray-900 text-base md:text-lg mb-2"
                       style={{ fontFamily: "'Montserrat', sans-serif" }}
                     >
                       {item.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                    <p className="text-gray-600 text-xs md:text-sm">{item.desc}</p>
                   </div>
                 </div>
               </div>
@@ -553,28 +541,16 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ── CTA INTERMEDIO ─────────────────────────────────────────────────── */}
-      <section
-        className="py-16"
-        style={{
-          background: "linear-gradient(135deg, #A01418 0%, #E31C23 100%)",
-        }}
-      >
+      {/* ── CTA INTERMEDIA ─────────────────────────────────────────────────── */}
+      <section className="py-16 bg-gradient-to-r from-red-600 to-red-700">
         <div className="container text-center">
           <h2
-            className="text-2xl md:text-3xl font-black text-white mb-4"
+            className="text-3xl md:text-4xl font-black text-white mb-6"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             ¿Listo para transformar tu empresa?
           </h2>
-          <p className="text-blue-200 mb-8 text-lg">
-            Cuéntanos tu problema y te damos una solución en minutos.
-          </p>
-          <CTAButton
-            text="Solicita tu cotización gratis"
-            size="large"
-            microcopy="Responde en minutos · Sin compromiso"
-          />
+          <CTAButton text="Agenda tu consulta GRATIS" size="large" />
         </div>
       </section>
 
@@ -582,16 +558,13 @@ export default function Home() {
       <Section id="servicios" className="py-20 bg-white">
         <div className="container">
           <div className="text-center mb-14">
-            <span className="text-sm font-bold text-red-600 uppercase tracking-widest">Qué ofrecemos</span>
+            <span className="text-sm font-bold text-red-600 uppercase tracking-widest">Soluciones completas</span>
             <h2
               className="text-3xl md:text-4xl font-black text-gray-900 mt-3 mb-4"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Soluciones a medida para tu negocio
             </h2>
-            <p className="text-gray-500 max-w-xl mx-auto">
-              Desarrollamos exactamente lo que tu empresa necesita, sin soluciones genéricas.
-            </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -663,72 +636,56 @@ export default function Home() {
       >
         <div className="container">
           <div className="text-center mb-14">
-            <span className="text-sm font-bold text-red-600 uppercase tracking-widest">Cómo trabajamos</span>
+            <span className="text-sm font-bold text-red-600 uppercase tracking-widest">Metodología probada</span>
             <h2
               className="text-3xl md:text-4xl font-black text-gray-900 mt-3 mb-4"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Tu proyecto en 4 pasos claros
             </h2>
-            <p className="text-gray-500 max-w-xl mx-auto">
-              Sabes exactamente qué esperar en cada etapa. Sin sorpresas, sin retrasos.
-            </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                {
-                  step: 1,
-                  title: "Análisis de Necesidades",
-                  desc: "Entrevistamos a tu equipo, entendemos tus procesos actuales y definimos exactamente qué necesitas. Sin tecnicismos, en tu idioma.",
-                  time: "1-2 días",
-                  icon: <Users size={20} className="text-white" />,
-                },
-                {
-                  step: 2,
-                  title: "Diseño y Prototipo",
-                  desc: "Preparamos prototipos visuales de tu sistema antes de programar. Tú apruebas cómo se verá y funcionará todo.",
-                  time: "3-5 días",
-                  icon: <FileText size={20} className="text-white" />,
-                },
-                {
-                  step: 3,
-                  title: "Desarrollo",
-                  desc: "Codificamos la solución aprobada con estándares de calidad. Recibes avances semanales para seguir el progreso.",
-                  time: "2-8 semanas",
-                  icon: <Zap size={20} className="text-white" />,
-                },
-                {
-                  step: 4,
-                  title: "Capacitación y Soporte",
-                  desc: "Entrenamos a tu equipo en el uso del sistema y te damos soporte continuo. No te dejamos solo después de entregar.",
-                  time: "Continuo",
-                  icon: <Headphones size={20} className="text-white" />,
-                },
-              ].map((item, i) => (
-                <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex gap-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="step-badge">{item.step}</div>
-                    {i < 3 && <div className="w-0.5 flex-1 bg-blue-100 hidden md:block" />}
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {[
+              {
+                icon: <MessageCircle size={32} className="text-red-600" />,
+                title: "Análisis de Necesidades",
+                desc: "Nos reunimos para entender tu negocio, desafíos y objetivos. Escuchamos y proponemos soluciones a medida.",
+              },
+              {
+                icon: <Star size={32} className="text-red-600" />,
+                title: "Diseño y Propuesta",
+                desc: "Presentamos un plan detallado con cronograma, funcionalidades y presupuesto. Todo claro desde el inicio.",
+              },
+              {
+                icon: <CheckCircle size={32} className="text-red-600" />,
+                title: "Desarrollo e Implementación",
+                desc: "Construimos tu solución con tecnología de punta. Te mantenemos informado en cada fase del proyecto.",
+              },
+              {
+                icon: <TrendingUp size={32} className="text-red-600" />,
+                title: "Capacitación y Soporte",
+                desc: "Capacitamos a tu equipo y ofrecemos soporte continuo. Tu éxito es nuestro éxito.",
+              },
+            ].map((step, i) => (
+              <div key={i} className="flex gap-6">
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 rounded-full bg-white border-2 border-red-600 flex items-center justify-center mb-4 shadow-sm">
+                    {step.icon}
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between gap-2 mb-2">
-                      <h3
-                        className="font-bold text-gray-900 text-lg"
-                        style={{ fontFamily: "'Montserrat', sans-serif" }}
-                      >
-                        {item.title}
-                      </h3>
-                      <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full whitespace-nowrap">
-                        {item.time}
-                      </span>
-                    </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
+                  {i < 3 && <div className="w-1 h-12 bg-red-200" />}
                 </div>
-              ))}
-            </div>
+                <div className="pt-2">
+                  <h3
+                    className="font-bold text-gray-900 text-lg mb-2"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </Section>
@@ -737,86 +694,98 @@ export default function Home() {
       <Section id="casos" className="py-20 bg-white">
         <div className="container">
           <div className="text-center mb-14">
-            <span className="text-sm font-bold text-red-600 uppercase tracking-widest">Prueba social</span>
+            <span className="text-sm font-bold text-red-600 uppercase tracking-widest">Empresas que confían en nosotros</span>
             <h2
               className="text-3xl md:text-4xl font-black text-gray-900 mt-3 mb-4"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              Empresas del Cesar que ya crecen con StallBug
+              Empresas del Cesar que crecen con StallBug
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-14">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               {
-                quote: "Antes tardábamos 3 horas en cerrar la caja. Ahora son 15 minutos. StallBug transformó nuestra operación completamente.",
-                name: "Carlos Martínez",
+                name: "Distribuidora El Éxito",
                 role: "Gerente General",
-                company: "Distribuidora El Cesar",
-                stat: "+60% eficiencia",
-                color: "text-blue-600",
+                quote: "Pasamos de 5 horas diarias en reportes a 30 minutos. Ahora vemos todo en tiempo real.",
+                image: "👨‍💼",
               },
               {
-                quote: "Los errores en inventario nos costaban millones al año. Con el sistema de StallBug, llevamos 8 meses sin un solo descuadre.",
-                name: "Laura Jiménez",
-                role: "Administradora",
-                company: "Ferretería Central Valledupar",
-                stat: "0 errores en 8 meses",
-                color: "text-green-600",
+                name: "Tienda de Ropa Moderna",
+                role: "Dueña",
+                quote: "Implementamos el sistema en 3 semanas. Nuestro inventario ahora es exacto y los errores bajaron 95%.",
+                image: "👩‍💼",
               },
               {
-                quote: "Pensé que el software era solo para grandes empresas. StallBug nos hizo uno a nuestra medida y al precio justo.",
-                name: "Pedro Orozco",
-                role: "Propietario",
-                company: "Restaurante La Guajira",
-                stat: "+40% en ventas",
-                color: "text-orange-600",
+                name: "Empresa de Servicios XYZ",
+                role: "Director de Operaciones",
+                quote: "El mejor inversión que hemos hecho. El ROI se recuperó en 4 meses.",
+                image: "👨‍💼",
               },
-            ].map((t, i) => (
-              <div key={i} className="testimonial-card p-6 pt-8">
-                <div className="flex mb-3">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} size={16} className="text-yellow-400 fill-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed mb-4 italic">"{t.quote}"</p>
-                <div className="flex items-center justify-between">
+            ].map((testimonial, i) => (
+              <div key={i} className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="text-5xl">{testimonial.image}</div>
                   <div>
-                    <div className="font-bold text-gray-900 text-sm" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                      {t.name}
-                    </div>
-                    <div className="text-xs text-gray-500">{t.role} · {t.company}</div>
+                    <h4
+                      className="font-bold text-gray-900"
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    >
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-sm text-gray-500">{testimonial.role}</p>
                   </div>
-                  <span className={`text-xs font-bold ${t.color} bg-gray-50 px-2 py-1 rounded-full`}>
-                    {t.stat}
-                  </span>
+                </div>
+                <p className="text-gray-600 italic leading-relaxed">"{testimonial.quote}"</p>
+                <div className="flex gap-1 mt-4">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} size={16} className="fill-yellow-400 text-yellow-400" />
+                  ))}
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Team image */}
-          <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-xl">
-            <img
-              src="/manus-storage/stallbug-team_99a262bf.jpg"
-              alt="Equipo StallBug"
-              className="w-full h-64 md:h-80 object-cover"
-            />
-            <div className="bg-blue-600 text-white text-center py-4 px-6">
-              <p className="font-bold" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                Nuestro equipo en Valledupar, listo para transformar tu empresa
-              </p>
+          {/* Featured case study */}
+          <div className="mt-16 bg-gradient-to-r from-red-50 to-orange-50 rounded-3xl border border-red-100 p-8 md:p-12 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3
+                  className="text-2xl md:text-3xl font-black text-gray-900 mb-4"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  Caso de Éxito: Almacén Regional
+                </h3>
+                <ul className="space-y-3 mb-6">
+                  {[
+                    "Reducción de 80% en tiempo de facturación",
+                    "Cero errores en inventario durante 6 meses",
+                    "Aumento de 40% en capacidad de despachos",
+                    "ROI recuperado en 3 meses",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-gray-700">
+                      <CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-1" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <CTAButton text="Ver más casos de éxito" />
+              </div>
+              <div className="bg-white rounded-2xl p-6 shadow-sm">
+                <img
+                  src="/manus-storage/stallbug-team_a1b2c3d4.jpg"
+                  alt="Equipo de trabajo"
+                  className="rounded-xl w-full"
+                />
+              </div>
             </div>
           </div>
         </div>
       </Section>
 
       {/* ── FAQ ────────────────────────────────────────────────────────────── */}
-      <Section
-        id="faq"
-        className="py-20"
-        style={{ backgroundColor: "#F7F8FC" } as React.CSSProperties}
-      >
+      <Section id="faq" className="py-20 bg-white">
         <div className="container">
           <div className="text-center mb-14">
             <span className="text-sm font-bold text-red-600 uppercase tracking-widest">Tus dudas resueltas</span>
@@ -877,101 +846,69 @@ export default function Home() {
       </Section>
 
       {/* ── CTA FINAL ──────────────────────────────────────────────────────── */}
-      <section
-        className="py-24 relative overflow-hidden"
-        style={{
-          background: "linear-gradient(135deg, #5a0a0f 0%, #8b0f18 50%, #E31C23 100%)",
-        }}
-      >
-        <div className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `url(/manus-storage/stallbug-hero_7aa34494.jpg)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-red-400/10 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-red-300/10 blur-2xl" />
-
-        <div className="container relative z-10 text-center">
-          <div className="max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-sm font-semibold text-red-100">Disponibles ahora mismo</span>
-            </div>
-
-            <h2
-              className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
-            >
-              ¿Listo para optimizar tu empresa?
-            </h2>
-            <p className="text-xl text-red-200 mb-10">
-              Escríbenos por WhatsApp y recibe una asesoría gratuita. Sin compromisos, sin tecnicismos.
-            </p>
-
-            <CTAButton
-              text="¡Escríbenos por WhatsApp ahora!"
-              size="large"
-              microcopy="Respuesta en minutos · Consulta 100% gratuita"
-            />
-
-            <p className="text-red-300 text-sm mt-6">
-              🔒 Protegemos tus datos personales · No compartimos tu información con terceros
-            </p>
-          </div>
+      <section className="py-20 bg-gradient-to-r from-red-600 to-red-700">
+        <div className="container text-center">
+          <h2
+            className="text-3xl md:text-4xl font-black text-white mb-4"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            ¿Listo para optimizar tu negocio?
+          </h2>
+          <p className="text-red-100 text-lg mb-8 max-w-2xl mx-auto">
+            Contáctanos hoy y recibe una consulta gratuita. Sin compromiso, sin obligaciones.
+          </p>
+          <CTAButton text="Agenda tu consulta GRATIS" size="large" />
         </div>
       </section>
 
       {/* ── FOOTER ─────────────────────────────────────────────────────────── */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-gray-300 py-12">
         <div className="container">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <img
-                src="/logo.png"
-                alt="StallBug"
-                className="w-8 h-8 object-contain"
-              />
-              <span
-                className="font-black text-xl"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
-              >
-                Stall<span className="text-red-600">Bug</span>
-              </span>
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <img
+                  src="/logo.png"
+                  alt="StallBug"
+                  className="w-8 h-8"
+                />
+                <span className="font-black text-white">
+                  Stall<span className="text-red-600">Bug</span>
+                </span>
+              </div>
+              <p className="text-sm">Software a medida para negocios del Cesar.</p>
             </div>
-
-            <div className="text-center">
-              <p className="text-gray-400 text-sm">
-                Software empresarial a medida · Valledupar, Cesar, Colombia
-              </p>
-              <p className="text-gray-500 text-xs mt-1">
-                © {new Date().getFullYear()} StallBug. Todos los derechos reservados.
-              </p>
+            <div>
+              <h4 className="font-bold text-white mb-4">Soluciones</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#servicios" className="hover:text-red-400 transition-colors">Facturación</a></li>
+                <li><a href="#servicios" className="hover:text-red-400 transition-colors">Inventarios</a></li>
+                <li><a href="#servicios" className="hover:text-red-400 transition-colors">Apps Móviles</a></li>
+              </ul>
             </div>
-
-            <a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-whatsapp px-5 py-3 text-sm font-bold text-white inline-flex items-center gap-2"
-            >
-              <WhatsAppIcon size={18} />
-              Contáctanos
-            </a>
+            <div>
+              <h4 className="font-bold text-white mb-4">Empresa</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#casos" className="hover:text-red-400 transition-colors">Casos de Éxito</a></li>
+                <li><a href="#faq" className="hover:text-red-400 transition-colors">FAQ</a></li>
+                <li><a href="#" className="hover:text-red-400 transition-colors">Contacto</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-white mb-4">Contacto</h4>
+              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors">
+                <WhatsAppIcon size={18} />
+                WhatsApp
+              </a>
+            </div>
           </div>
-
-          <div className="mt-8 pt-6 border-t border-gray-800 text-center">
-            <p className="text-gray-600 text-xs">
-              Al contactarnos, aceptas nuestra{" "}
-              <span className="text-gray-500 hover:text-gray-400 cursor-pointer">política de privacidad</span>.
-              No compartimos tus datos con terceros.
-            </p>
+          <div className="border-t border-gray-800 pt-8 text-center text-sm">
+            <p>&copy; 2026 StallBug. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
 
-      {/* ── FLOATING WHATSAPP ──────────────────────────────────────────────── */}
+      {/* Floating WhatsApp Button */}
       <FloatingWhatsApp />
     </div>
   );
