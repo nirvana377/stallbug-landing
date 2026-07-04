@@ -709,19 +709,19 @@ export default function Home() {
           name: "Invitrosoft",
           role: "Software para control de vitroplantas",
           quote: "Pasamos de 5 horas diarias en reportes a 30 minutos. Ahora vemos todo en tiempo real.",
-          image: "/images/invitrosoft.png",
+          image: "client/images/invitrosoft.png",
         },
         {
           name: "AXI",
           role: "Software para preicfes",
           quote: "Implementamos el sistema en 3 semanas. cientos de estudiantes practican su preicfes a la vez.",
-          image: "/public/axis.png",
+          image: "client/public/axis.png",
         },
         {
           name: "Pro Stock Tools",
           role: "Software gestion de inventarios y facturación",
           quote: "Implementamos el sistema en 3 semanas. Nuestro inventario ahora es exacto y los errores bajaron 95%.",
-          image: "/public/prostock.png",
+          image: "client/public/prostock.png",
         },
       ].map((testimonial, i) => (
         <div key={i} className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
@@ -778,7 +778,7 @@ export default function Home() {
               </div>
               <div className="bg-white rounded-2xl p-6 shadow-sm">
                 <img
-                  src="/public/prostocktool.png"
+                  src="client/public/prostocktool.png"
                   alt="Sistema de inventario"
                   className="rounded-xl w-full"
                 />
