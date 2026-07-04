@@ -690,62 +690,66 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ── CASOS DE ÉXITO ─────────────────────────────────────────────────── */}
-      <Section id="casos" className="py-20 bg-white">
-        <div className="container">
-          <div className="text-center mb-14">
-            <span className="text-sm font-bold text-red-600 uppercase tracking-widest">Empresas que confían en nosotros</span>
-            <h2
-              className="text-3xl md:text-4xl font-black text-gray-900 mt-3 mb-4"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
-            >
-              Empresas del Cesar que crecen con StallBug
-            </h2>
-          </div>
+     {/* ── CASOS DE ÉXITO ─────────────────────────────────────────────────── */}
+<Section id="casos" className="py-20 bg-white">
+  <div className="container">
+    <div className="text-center mb-14">
+      <span className="text-sm font-bold text-red-600 uppercase tracking-widest">Empresas que confían en nosotros</span>
+      <h2
+        className="text-3xl md:text-4xl font-black text-gray-900 mt-3 mb-4"
+        style={{ fontFamily: "'Montserrat', sans-serif" }}
+      >
+        Empresas del Cesar que crecen con StallBug
+      </h2>
+    </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                name: "Distribuidora El Éxito",
-                role: "Gerente General",
-                quote: "Pasamos de 5 horas diarias en reportes a 30 minutos. Ahora vemos todo en tiempo real.",
-                image: "👨‍💼",
-              },
-              {
-                name: "Tienda de Ropa Moderna",
-                role: "Dueña",
-                quote: "Implementamos el sistema en 3 semanas. Nuestro inventario ahora es exacto y los errores bajaron 95%.",
-                image: "👩‍💼",
-              },
-              {
-                name: "Empresa de Servicios XYZ",
-                role: "Director de Operaciones",
-                quote: "El mejor inversión que hemos hecho. El ROI se recuperó en 4 meses.",
-                image: "👨‍💼",
-              },
-            ].map((testimonial, i) => (
-              <div key={i} className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="text-5xl">{testimonial.image}</div>
-                  <div>
-                    <h4
-                      className="font-bold text-gray-900"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                    >
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
-                  </div>
-                </div>
-                <p className="text-gray-600 italic leading-relaxed">"{testimonial.quote}"</p>
-                <div className="flex gap-1 mt-4">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} size={16} className="fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-              </div>
+    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {[
+        {
+          name: "Invitrosoft",
+          role: "Software para control de vitroplantas",
+          quote: "Pasamos de 5 horas diarias en reportes a 30 minutos. Ahora vemos todo en tiempo real.",
+          image: "/images/invitrosoft.png",
+        },
+        {
+          name: "AXI",
+          role: "Software para preicfes",
+          quote: "Implementamos el sistema en 3 semanas. cientos de estudiantes practican su preicfes a la vez.",
+          image: "/public/axis.png",
+        },
+        {
+          name: "Pro Stock Tools",
+          role: "Software gestion de inventarios y facturación",
+          quote: "Implementamos el sistema en 3 semanas. Nuestro inventario ahora es exacto y los errores bajaron 95%.",
+          image: "/public/prostock.png",
+        },
+      ].map((testimonial, i) => (
+        <div key={i} className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
+          <div className="flex items-center gap-4 mb-6">
+            <img
+              src={testimonial.image}
+              alt={testimonial.name}
+              className="w-14 h-14 rounded-full object-cover"
+            />
+            <div>
+              <h4
+                className="font-bold text-gray-900"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                {testimonial.name}
+              </h4>
+              <p className="text-sm text-gray-500">{testimonial.role}</p>
+            </div>
+          </div>
+          <p className="text-gray-600 italic leading-relaxed">"{testimonial.quote}"</p>
+          <div className="flex gap-1 mt-4">
+            {[...Array(5)].map((_, j) => (
+              <Star key={j} size={16} className="fill-yellow-400 text-yellow-400" />
             ))}
           </div>
+        </div>
+      ))}
+    </div>
 
           {/* Featured case study */}
           <div className="mt-16 bg-gradient-to-r from-red-50 to-orange-50 rounded-3xl border border-red-100 p-8 md:p-12 max-w-4xl mx-auto">
@@ -755,7 +759,7 @@ export default function Home() {
                   className="text-2xl md:text-3xl font-black text-gray-900 mb-4"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  Caso de Éxito: Almacén Regional
+                  Caso de Éxito: Pro Stock Tools
                 </h3>
                 <ul className="space-y-3 mb-6">
                   {[
@@ -774,8 +778,8 @@ export default function Home() {
               </div>
               <div className="bg-white rounded-2xl p-6 shadow-sm">
                 <img
-                  src="/manus-storage/stallbug-team_a1b2c3d4.jpg"
-                  alt="Equipo de trabajo"
+                  src="/public/prostocktool.png"
+                  alt="Sistema de inventario"
                   className="rounded-xl w-full"
                 />
               </div>
