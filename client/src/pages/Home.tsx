@@ -374,7 +374,7 @@ export default function Home() {
             {[
               { value: 50, suffix: "+", label: "Proyectos entregados" },
               { value: 98, suffix: "%", label: "Clientes satisfechos" },
-              { value: 3, suffix: " años", label: "De experiencia" },
+              { value: 2, suffix: " años", label: "De experiencia" },
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-3xl md:text-4xl font-black text-white mb-2">
@@ -708,7 +708,7 @@ export default function Home() {
         {
           name: "Invitrosoft",
           role: "Software para control de vitroplantas",
-          quote: "Pasamos de 5 horas diarias en reportes a 30 minutos. Ahora vemos todo en tiempo real.",
+          quote: "Pasamos de 5 horas diarias en reportes a 30 minutos. Ahora vemos todo el proceso a tiempo real.",
           image: "/invitro_logo.png",
         },
         {
@@ -720,7 +720,7 @@ export default function Home() {
         {
           name: "Pro Stock Tools",
           role: "Software gestion de inventarios y facturación",
-          quote: "Implementamos el sistema en 3 semanas. Nuestro inventario ahora es exacto y los errores bajaron 95%.",
+          quote: "Implementamos el sistema en 6 semanas. Nuestro inventario ahora es exacto y los errores bajaron 95%.",
           image: "/logo_stolls.png",
         },
       ].map((testimonial, i) => (
@@ -765,7 +765,7 @@ export default function Home() {
                   {[
                     "Reducción de 80% en tiempo de facturación",
                     "Cero errores en inventario durante 6 meses",
-                    "Aumento de 40% en capacidad de despachos",
+                    "Aumento de 40% en capacidad de bodegas",
                     "ROI recuperado en 3 meses",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-gray-700">
