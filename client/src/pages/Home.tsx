@@ -709,19 +709,19 @@ export default function Home() {
           name: "Invitrosoft",
           role: "Software para control de vitroplantas",
           quote: "Pasamos de 5 horas diarias en reportes a 30 minutos. Ahora vemos todo en tiempo real.",
-          image: "/invitrosoft_logo.png",
+          image: "/invitro_logo.png",
         },
         {
           name: "AXI",
           role: "Software para preicfes",
-          quote: "Implementamos el sistema en 3 semanas. cientos de estudiantes practican su preicfes a la vez.",
+          quote: "Implementamos el sistema en 5 semanas. cientos de estudiantes practican su preicfes a la vez.",
           image: "/axis_logo.png",
         },
         {
           name: "Pro Stock Tools",
           role: "Software gestion de inventarios y facturación",
           quote: "Implementamos el sistema en 3 semanas. Nuestro inventario ahora es exacto y los errores bajaron 95%.",
-          image: "/prostocktool_logo.png",
+          image: "/logo_stolls.png",
         },
       ].map((testimonial, i) => (
         <div key={i} className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
